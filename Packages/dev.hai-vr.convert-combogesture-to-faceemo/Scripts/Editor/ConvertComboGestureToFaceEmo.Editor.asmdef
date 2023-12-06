@@ -1,0 +1,24 @@
+{
+    "name": "ConvertComboGestureToFaceEmo.Editor",
+    "references": [
+        "CGE.Runtime",
+        "jp.suzuryg.face-emo.components.Runtime",
+        "ConvertComboGestureToFaceEmo.Runtime",
+        "jp.suzuryg.face-emo.domain.Runtime",
+        "jp.suzuryg.face-emo.appmain.Editor",
+        "jp.suzuryg.face-emo.external.mathijs-bakker.extenject.Runtime",
+        "jp.suzuryg.face-emo.detail.Editor",
+        "jp.suzuryg.face-emo.external.neuecc.unirx.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -43,20 +43,16 @@ namespace ConvertComboGestureToFaceEmo.Editor
             for (var index = 0; index < total; index++)
             {
                 var mapper = my.comboGestureCompiler.comboLayers[index];
-                if (mapper.kind == GestureComboStageKind.Activity)
+                if (mapper.kind == GestureComboStageKind.Activity && mapper.activity != null)
                 {
-                    if (mapper.activity == null) continue;
-
                     var modeId = menu.AddMode(cgeGroup);
                     menu.ModifyModeProperties(modeId, displayName: mapper.activity.name);
 
                     ConvertActivity(menu, modeId, mapper.activity, my.ignoreFistTriggers);
                 }
 
-                if (mapper.kind == GestureComboStageKind.Puppet)
+                if (mapper.kind == GestureComboStageKind.Puppet && mapper.puppet != null)
                 {
-                    if (mapper.puppet == null) continue;
-
                     var modeId = menu.AddMode(cgeGroup);
                     menu.ModifyModeProperties(modeId, displayName: mapper.puppet.name);
 

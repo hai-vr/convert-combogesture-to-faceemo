@@ -97,6 +97,7 @@ namespace ConvertComboGestureToFaceEmo.Editor
                     ConvertActivitySpecificHand(menu, modeId, activity, Hand.Left, ignoreFist);
                     break;
                 case ComboGestureActivity.CgeActivityMode.RightHandOnly:
+                    ConvertActivitySpecificHand(menu, modeId, activity, Hand.Right, ignoreFist);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

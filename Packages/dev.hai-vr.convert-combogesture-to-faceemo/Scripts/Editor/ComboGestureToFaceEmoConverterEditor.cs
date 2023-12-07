@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Linq;
-using System.Reflection;
 using ConvertComboGestureToFaceEmo.Runtime;
 using Hai.ComboGesture.Scripts.Components;
 using Suzuryg.FaceEmo.AppMain;
 using Suzuryg.FaceEmo.Detail.View;
 using Suzuryg.FaceEmo.Domain;
-using UniRx;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEditor.SceneManagement;
@@ -66,7 +64,7 @@ namespace ConvertComboGestureToFaceEmo.Editor
                 }
 
                 if (index % ItemLimit == ItemLimit - 1 && index != total - 1
-                                                       && index != total - 2
+                                                       && index != total - 2 // If the last sub-group would only contain one item, don't create it
                                                        )
                 {
                     var newSubGroup = menu.AddGroup(cgeGroup);
@@ -77,10 +75,6 @@ namespace ConvertComboGestureToFaceEmo.Editor
 
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
             menuRepository.Save(string.Empty, menu, "Convert ComboGesture to FaceEmo");
-
-            // var inspectorView = installer.Container.Resolve<InspectorView>();
-            // var onMenuUpdatedObservable = inspectorView.OnMenuUpdated;
-            // __BreachObservable(onMenuUpdatedObservable).OnNext((menu, isModified: true));
             
             var existingWindows = Resources.FindObjectsOfTypeAll<MainWindow>();
             if (existingWindows.Any())
@@ -267,7 +261,7 @@ namespace ConvertComboGestureToFaceEmo.Editor
             {
                 if (bt.children.Length == 0) return null;
                 
-                // As far as I know, Puppets are not supported in FaceEmo. Try to the most sensible animation from that blend tree.
+                // As far as I know, Puppets are not supported in FaceEmo. Try to get the most sensible animation from that blend tree.
                 
                 var is2d = bt.blendType != BlendTreeType.Direct && bt.blendType != BlendTreeType.Simple1D;
                 if (is2d)
@@ -344,6 +338,8 @@ namespace ConvertComboGestureToFaceEmo.Editor
             menu.AddBranch(modeId);
             branchIndex++;
 
+            // As far as I know, in FaceEmo blinking, prevention is part of the branch, not the animation itself,
+            // so when it comes to Analog Fist animations, ComboGesture's blinking metadata cannot be cleanly carried over to FaceEmo.
             var bothEyesClosed = activity.blinking.Contains(animation);
             menu.ModifyBranchProperties(modeId, currentBranchIndex, blinkEnabled: !bothEyesClosed,
                 isLeftTriggerUsed: leftTriggerNullable != null || universalTrigger != null,
@@ -397,15 +393,6 @@ namespace ConvertComboGestureToFaceEmo.Editor
         private static Animation AsDomainAnimation(Motion animation)
         {
             return new Animation(AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(animation)));
-        }
-
-        private static Subject<(IMenu menu, bool isModified)> __BreachObservable(IObservable<(IMenu menu, bool isModified)> onMenuUpdatedObservable)
-        {
-            var sourceField = onMenuUpdatedObservable.GetType()
-                .GetField("source", BindingFlags.Instance | BindingFlags.NonPublic);
-            var __breachObservable__OnMenuUpdated =
-                sourceField.GetValue(onMenuUpdatedObservable) as Subject<(IMenu menu, bool isModified)>;
-            return __breachObservable__OnMenuUpdated;
         }
     }
 }

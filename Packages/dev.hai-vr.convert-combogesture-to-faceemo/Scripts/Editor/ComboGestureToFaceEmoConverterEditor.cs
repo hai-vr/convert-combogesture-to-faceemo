@@ -189,7 +189,7 @@ namespace ConvertComboGestureToFaceEmo.Editor
             
             // Where we're going we don't need foreach
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim00), 00);
-            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim01 : activity.anim00), 01, leftTrigger: ignoreFist ? null : Anim(activity.anim01));
+            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim01 : activity.anim00), 01, rightTrigger: ignoreFist ? null : Anim(activity.anim01));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim02), 02);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim03), 03);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim04), 04);
@@ -197,12 +197,12 @@ namespace ConvertComboGestureToFaceEmo.Editor
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim06), 06);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim07), 07);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim11 : activity.anim00), 11, leftTrigger: ignoreFist ? null : Anim(activity.anim11_L), rightTrigger: ignoreFist ? null : Anim(activity.anim11_R), universalTrigger: ignoreFist ? null : Anim(activity.anim11));
-            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim12 : activity.anim00), 12, rightTrigger: ignoreFist ? null : Anim(activity.anim12));
-            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim13 : activity.anim00), 13, rightTrigger: ignoreFist ? null : Anim(activity.anim13));
-            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim14 : activity.anim00), 14, rightTrigger: ignoreFist ? null : Anim(activity.anim14));
-            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim15 : activity.anim00), 15, rightTrigger: ignoreFist ? null : Anim(activity.anim15));
-            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim16 : activity.anim00), 16, rightTrigger: ignoreFist ? null : Anim(activity.anim16));
-            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim17 : activity.anim00), 17, rightTrigger: ignoreFist ? null : Anim(activity.anim17));
+            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim12 : activity.anim00), 12, leftTrigger: ignoreFist ? null : Anim(activity.anim12));
+            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim13 : activity.anim00), 13, leftTrigger: ignoreFist ? null : Anim(activity.anim13));
+            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim14 : activity.anim00), 14, leftTrigger: ignoreFist ? null : Anim(activity.anim14));
+            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim15 : activity.anim00), 15, leftTrigger: ignoreFist ? null : Anim(activity.anim15));
+            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim16 : activity.anim00), 16, leftTrigger: ignoreFist ? null : Anim(activity.anim16));
+            Permutation(menu, modeId, activity, ref branchIndex, Anim(ignoreFist ? activity.anim17 : activity.anim00), 17, leftTrigger: ignoreFist ? null : Anim(activity.anim17));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim22), 22);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim23), 23);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim24), 24);
@@ -225,29 +225,29 @@ namespace ConvertComboGestureToFaceEmo.Editor
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim67), 67);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim77), 77);
             //
-            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim10) ?? Anim(activity.anim01) : Anim(activity.anim00), 10, rightTrigger: ignoreFist ? null : Anim(activity.anim10) ?? Anim(activity.anim01));
+            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim10) ?? Anim(activity.anim01) : Anim(activity.anim00), 10, leftTrigger: ignoreFist ? null : Anim(activity.anim10) ?? Anim(activity.anim01));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim20) ?? Anim(activity.anim02), 20);
-            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim21) ?? Anim(activity.anim12) : Anim(activity.anim00), 21, leftTrigger: ignoreFist ? null : Anim(activity.anim21) ?? Anim(activity.anim12));
+            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim21) ?? Anim(activity.anim12) : Anim(activity.anim00), 21, rightTrigger: ignoreFist ? null : Anim(activity.anim21) ?? Anim(activity.anim12));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim30) ?? Anim(activity.anim03), 30);
-            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim31) ?? Anim(activity.anim13) : Anim(activity.anim00), 31, leftTrigger: ignoreFist ? null : Anim(activity.anim31) ?? Anim(activity.anim13));
+            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim31) ?? Anim(activity.anim13) : Anim(activity.anim00), 31, rightTrigger: ignoreFist ? null : Anim(activity.anim31) ?? Anim(activity.anim13));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim32) ?? Anim(activity.anim23), 32);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim40) ?? Anim(activity.anim04), 40);
-            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim41) ?? Anim(activity.anim14) : Anim(activity.anim00), 41, leftTrigger: ignoreFist ? null : Anim(activity.anim41) ?? Anim(activity.anim14));
+            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim41) ?? Anim(activity.anim14) : Anim(activity.anim00), 41, rightTrigger: ignoreFist ? null : Anim(activity.anim41) ?? Anim(activity.anim14));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim42) ?? Anim(activity.anim24), 42);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim43) ?? Anim(activity.anim34), 43);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim50) ?? Anim(activity.anim05), 50);
-            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim51) ?? Anim(activity.anim15) : Anim(activity.anim00), 51, leftTrigger: ignoreFist ? null : Anim(activity.anim51) ?? Anim(activity.anim15));
+            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim51) ?? Anim(activity.anim15) : Anim(activity.anim00), 51, rightTrigger: ignoreFist ? null : Anim(activity.anim51) ?? Anim(activity.anim15));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim52) ?? Anim(activity.anim25), 52);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim53) ?? Anim(activity.anim35), 53);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim54) ?? Anim(activity.anim45), 54);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim60) ?? Anim(activity.anim06), 60);
-            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim61) ?? Anim(activity.anim16) : Anim(activity.anim00), 61, leftTrigger: ignoreFist ? null : Anim(activity.anim61) ?? Anim(activity.anim16));
+            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim61) ?? Anim(activity.anim16) : Anim(activity.anim00), 61, rightTrigger: ignoreFist ? null : Anim(activity.anim61) ?? Anim(activity.anim16));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim62) ?? Anim(activity.anim26), 62);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim63) ?? Anim(activity.anim36), 63);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim64) ?? Anim(activity.anim46), 64);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim65) ?? Anim(activity.anim56), 65);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim70) ?? Anim(activity.anim07), 70);
-            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim71) ?? Anim(activity.anim17) : Anim(activity.anim00), 71, leftTrigger: ignoreFist ? null : Anim(activity.anim71) ?? Anim(activity.anim17));
+            Permutation(menu, modeId, activity, ref branchIndex, ignoreFist ? Anim(activity.anim71) ?? Anim(activity.anim17) : Anim(activity.anim00), 71, rightTrigger: ignoreFist ? null : Anim(activity.anim71) ?? Anim(activity.anim17));
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim72) ?? Anim(activity.anim27), 72);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim73) ?? Anim(activity.anim37), 73);
             Permutation(menu, modeId, activity, ref branchIndex, Anim(activity.anim74) ?? Anim(activity.anim47), 74);

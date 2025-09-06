@@ -1,7 +1,7 @@
 {
   "name": "dev.hai-vr.convert-combogesture-to-faceemo",
   "displayName": "Haï ~ Convert ComboGesture to FaceEmo",
-  "version": "0.2.0",
+  "version": "0.3.0-beta.1",
   "unity": "2019.4",
   "description": "Convert ComboGesture to FaceEmo https://docs.hai-vr.dev/docs/products/combo-gesture-expressions/convert-to-faceemo",
   "author" : {
